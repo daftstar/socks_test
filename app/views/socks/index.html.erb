@@ -1,0 +1,33 @@
+<h1>Listing socks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Foot</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socks.each do |sock| %>
+      <tr>
+        <td><%= sock.color %></td>
+        <td><%= sock.foot %></td>
+        <td><%= sock.size %></td>
+        <td><%= sock.quantity %></td>
+        <td><%= link_to 'Show', sock %></td>
+        <td><%= link_to 'Edit', edit_sock_path(sock) %></td>
+        <td><%= link_to 'Destroy', sock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sock', new_sock_path %>
