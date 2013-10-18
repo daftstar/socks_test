@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131018145537) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "socks", force: true do |t|
     t.string   "color"
     t.string   "foot"
